@@ -9,6 +9,7 @@ Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HARDAKER/%{module}-%{version}.tar.gz
 BuildArch:	noarch
+BuildRequires:	perl-CGI
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
