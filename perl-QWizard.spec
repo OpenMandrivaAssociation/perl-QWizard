@@ -1,16 +1,19 @@
-%define module QWizard
+%define upstream_name    QWizard
+%define upstream_version 3.15
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	A Question and Answer Wizard
-Name:		perl-%{module}
-Version:	3.15
-Release:	%mkrel 1
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HARDAKER/%{module}-%{version}.tar.gz
-BuildArch:	noarch
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HARDAKER/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl-CGI
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The QWizard module allows script authors to concentrate on the content of the
@@ -24,8 +27,7 @@ being used to display the resulting form(s) as it should be transparent to the
 script itself.
 
 %prep
-
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 chmod 644 examples/*
 
@@ -53,4 +55,3 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/QWizard_Widgets.pod
 %{perl_vendorlib}/auto/QWizard/Generator/autosplit.ix
 %{_mandir}/*/*
-
