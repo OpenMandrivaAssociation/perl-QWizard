@@ -1,15 +1,13 @@
 %define upstream_name    QWizard
-%define upstream_version 3.15
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	3.15
+Release:	5
 
 Summary:	A Question and Answer Wizard
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HARDAKER/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HARDAKER/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -28,7 +26,7 @@ being used to display the resulting form(s) as it should be transparent to the
 script itself.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 chmod 644 examples/*
 
@@ -55,9 +53,7 @@ make test
 %changelog
 * Wed Aug 05 2009 Jérôme Quelin <jquelin@mandriva.org> 3.150.0-1mdv2010.0
 + Revision: 410099
-- rebuild using %%perl_convert_version
-
-* Mon Sep 22 2008 Oden Eriksson <oeriksson@mandriva.com> 3.15-1mdv2009.0
+- rebuild using %3.15 Mon Sep 22 2008 Oden Eriksson <oeriksson@mandriva.com> 3.15-1mdv2009.0
 + Revision: 286512
 - fix deps
 - import perl-QWizard
